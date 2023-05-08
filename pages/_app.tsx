@@ -5,10 +5,12 @@ import { useEffect } from "react";
 import { APP_ID } from "./api/hello";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const id = process.env.NEXT_PUBLIC_APP_ID;
+  console.log(id);
   useEffect(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: process.env.APP_ID,
+        appId: process.env.NEXT_PUBLIC_APP_ID,
         autoLogAppEvents: true,
         // cookie: true,
         xfbml: true,
